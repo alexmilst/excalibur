@@ -3373,8 +3373,8 @@ function HomePage({ setPage, openInquiry }) {
               </Fade>
             </div>
             {/* RIGHT — photo, natural height drives the row */}
-            <div style={{ lineHeight: 0 }}>
-              <img src="https://i.imgur.com/Jxc33Ws.jpeg" alt="Excalibur Academy" style={{ width: "100%", height: "100%", display: "block" }} onError={e => e.target.style.display="none"} />
+            <div style={{ lineHeight: 0, height: '100%', overflow: 'hidden' }}>
+              <img src="https://i.imgur.com/Jxc33Ws.jpeg" alt="Excalibur Academy" style={{ width: '100%', height: '100%', display: 'block', objectFit: 'cover' }} onError={e => e.target.style.display="none"} />
             </div>
           </div>
         )}
