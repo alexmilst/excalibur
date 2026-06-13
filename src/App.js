@@ -3341,7 +3341,7 @@ function HomePage({ setPage, openInquiry }) {
           /* ── DESKTOP: two-column grid, photo sets row height ── */
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
             {/* LEFT — content */}
-            <div style={{ background: "#100F0C", display: "flex", flexDirection: "column", justifyContent: "center", padding: "48px 56px 48px 64px", position: "relative", borderRight: "1px solid rgba(216,183,140,.08)", overflow: "hidden" }}>
+            <div style={{ background: "#100F0C", display: "flex", flexDirection: "column", justifyContent: "center", padding: "48px 56px 48px 64px", position: "relative", borderRight: "1px solid rgba(216,183,140,.08)", overflow: "hidden", height: "100%" }}>
               <Fade d={.10}>
                 <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 400, fontSize: "clamp(26px,2.6vw,40px)", letterSpacing: "0.22em", color: "#D9C7A9", textTransform: "uppercase", lineHeight: 1, marginBottom: 8, whiteSpace: "nowrap", textAlign: "center", marginTop: -32 }}>
                   Excalibur Academy
@@ -3374,7 +3374,7 @@ function HomePage({ setPage, openInquiry }) {
             </div>
             {/* RIGHT — photo, natural height drives the row */}
             <div style={{ lineHeight: 0 }}>
-              <img src="https://i.imgur.com/Jxc33Ws.jpeg" alt="Excalibur Academy" style={{ width: "100%", height: "auto", display: "block" }} onError={e => e.target.style.display="none"} />
+              <img src="https://i.imgur.com/Jxc33Ws.jpeg" alt="Excalibur Academy" style={{ width: "100%", height: "100%", display: "block" }} onError={e => e.target.style.display="none"} />
             </div>
           </div>
         )}
