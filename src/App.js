@@ -3328,8 +3328,12 @@ function HomePage({ setPage, openInquiry }) {
                 <span style={{ fontFamily: serif, fontSize: 14, color: "#A48D6E" }}>✦</span>
                 <div style={{ flex: 1, height: 1, background: "linear-gradient(270deg, transparent, rgba(216,183,140,.3))" }} />
               </div>
-              <h1 style={{ fontFamily: "'adobe-garamond-pro', 'Garamond', serif", fontWeight: 400, fontSize: "clamp(14px,3.5vw,20px)", lineHeight: 1.6, color: "#D9C7A9", marginBottom: 24, letterSpacing: "0.18em", textAlign: "center", textTransform: "uppercase" }}>Leadership. Innovation. Excellence. Impact.</h1>
-              <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 15, lineHeight: 1.9, color: "#E4D5C1", marginBottom: 32, fontWeight: 400, textAlign: "justify" }}>A premier institute offering two-week summer intensives and academic-year after-school programs, where Fortune 100 executives, real entrepreneurs, keynote speakers, investors, and distinguished professors teach the next generation to lead the world — not follow it.</p>
+              <h1 style={{ fontFamily: "'adobe-garamond-pro', 'Garamond', serif", fontWeight: 400, fontSize: 18, lineHeight: 1.8, color: "#E4D5C1", marginBottom: 28, letterSpacing: "0.12em", textAlign: "center", textTransform: "uppercase" }}>
+                Leadership ✦ Gallantry ✦ Excellence ✦ Impact
+              </h1>
+              <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 18, lineHeight: 1.9, color: "#E4D5C1", fontWeight: 400, maxWidth: 440, textAlign: "justify", margin: "0 auto 24px" }}>
+                A premier institute offering two-week summer intensives and academic-year after-school programs, where Fortune 100 executives, real entrepreneurs, keynote speakers, investors, and distinguished professors teach the next generation to lead the world — not follow it.
+              </p>
               <div style={{ display: "flex", gap: 10, flexDirection: "row", justifyContent: "center", width: "100%", marginBottom: 24 }}>
                 <button onClick={() => setPage("apply")} style={{ fontFamily: sans, padding: "11px 20px", background: "#E4D5C1", border: "none", color: "#0F0F0F", fontSize: 10, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", cursor: "pointer", flex: 1 }}>Apply Now →</button>
                 <button onClick={() => setPage("programs")} style={{ fontFamily: sans, padding: "11px 16px", background: "transparent", border: "1px solid rgba(216,183,140,.25)", color: "#A48D6E", fontSize: 10, fontWeight: 550, letterSpacing: "0.13em", textTransform: "uppercase", cursor: "pointer", flex: 1 }}>Our Programs →</button>
@@ -3338,7 +3342,7 @@ function HomePage({ setPage, openInquiry }) {
             </div>
           </>
         ) : (
-          /* ── DESKTOP: two-column grid, photo sets row height ── */
+          /* ── DESKTOP: two-column grid, matched heights ── */
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
             {/* LEFT — content */}
             <div style={{ background: "#100F0C", display: "flex", flexDirection: "column", justifyContent: "center", padding: "48px 56px 48px 64px", position: "relative", borderRight: "1px solid rgba(216,183,140,.08)", overflow: "hidden" }}>
@@ -3353,12 +3357,12 @@ function HomePage({ setPage, openInquiry }) {
               </Fade>
 
               <Fade d={.20}>
-                <h1 style={{ fontFamily: "'adobe-garamond-pro', 'Garamond', serif", fontWeight: 400, fontSize: "clamp(18px,1.8vw,26px)", lineHeight: 1.6, color: "#D9C7A9", marginBottom: 24, letterSpacing: "0.18em", textAlign: "center", textTransform: "uppercase" }}>
-                  Leadership. Innovation. Excellence. Impact.
+                <h1 style={{ fontFamily: "'adobe-garamond-pro', 'Garamond', serif", fontWeight: 400, fontSize: 18, lineHeight: 1.8, color: "#E4D5C1", marginBottom: 32, letterSpacing: "0.12em", textAlign: "center", textTransform: "uppercase" }}>
+                  Leadership ✦ Gallantry ✦ Excellence ✦ Impact
                 </h1>
               </Fade>
               <Fade d={.26}>
-                <p style={{ fontFamily: sans, fontSize: 15, lineHeight: 1.9, color: "#E4D5C1", fontWeight: 300, maxWidth: 440, textAlign: "justify", margin: "0 auto 24px" }}>
+                <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 18, lineHeight: 1.6, color: "#E4D5C1", fontWeight: 400, maxWidth: 440, textAlign: "justify", margin: "0 auto 24px" }}>
                   A premier institute offering two-week summer intensives and academic-year after-school programs, where Fortune 100 executives, real entrepreneurs, keynote speakers, investors, and distinguished professors teach the next generation to lead the world — not follow it.
                 </p>
               </Fade>
@@ -3372,9 +3376,9 @@ function HomePage({ setPage, openInquiry }) {
                 <p style={{ fontFamily: sans, fontSize: 13, color: "#A48D6E", letterSpacing: "0.16em", textTransform: "uppercase", textAlign: "center", lineHeight: 1.8, marginTop: 12 }}>Ages 14–17 &nbsp;·&nbsp; 20 Students Per Cohort<br/>Orange County, CA</p>
               </Fade>
             </div>
-            {/* RIGHT — photo, natural height drives the row */}
-            <div style={{ lineHeight: 0 }}>
-              <img src="https://i.imgur.com/Jxc33Ws.jpeg" alt="Excalibur Academy" style={{ width: "100%", height: "auto", display: "block" }} onError={e => e.target.style.display="none"} />
+            {/* RIGHT — photo, matches left height with object-fit contain */}
+            <div style={{ lineHeight: 0, background: "#1a1a1a" }}>
+              <img src="https://i.imgur.com/Jxc33Ws.jpeg" alt="Excalibur Academy" style={{ width: "100%", height: "100%", display: "block", objectFit: "contain", objectPosition: "center" }} onError={e => e.target.style.display="none"} />
             </div>
           </div>
         )}
@@ -5634,7 +5638,7 @@ function ComingSoonPage({ onUnlock }) {
         </p>
 
         {/* Tagline from homepage */}
-        <p style={{ fontFamily: sans, fontSize: isMobile ? 14 : 16, color: "#FBF7EE", lineHeight: 1.75, maxWidth: 640, marginBottom: 40, fontWeight: 300 }}>
+        <p style={{ fontFamily: sans, fontSize: 18, color: "#FBF7EE", lineHeight: 1.75, maxWidth: 640, marginBottom: 40, fontWeight: 300 }}>
           A premier institute offering two-week summer intensives and academic-year after-school programs, where Fortune 100 executives, real entrepreneurs, keynote speakers, investors, and distinguished professors teach the next generation to lead the world — not follow it.
         </p>
 
@@ -7111,6 +7115,19 @@ function SummerDetailPage({ setPage, openInquiry }) {
     { time: "4:00 PM", block: "Debrief & Session Close", dur: "15 min", color:"#d8b78c", desc: "Each day ends with a structured debrief: what was learned, what challenged the group, and what ideas can be carried forward. Students leave with one clear takeaway from the day — a concept, question, habit, or standard to apply beyond the classroom." },
   ];
 
+  // Image rotation for schedule items
+  const scheduleImages = [
+    "https://i.imgur.com/N4OB8dS.jpeg", // Arrival & Welcome
+    "https://i.imgur.com/pjURLCk.jpeg", // Public Speaking A
+    "https://i.imgur.com/N4OB8dS.jpeg", // Snack Break
+    "https://i.imgur.com/pjURLCk.jpeg", // Public Speaking B
+    "https://i.imgur.com/N4OB8dS.jpeg", // Specialist Instruction
+    "https://i.imgur.com/pjURLCk.jpeg", // Lunch
+    "https://i.imgur.com/N4OB8dS.jpeg", // Venture Workshop
+    "https://i.imgur.com/pjURLCk.jpeg", // Guest Speaker
+    "https://i.imgur.com/N4OB8dS.jpeg", // Debrief & Close
+  ];
+
   const days = [
     { n: "Day 1", title: "Orientation, Leadership & Team Building", date: "Mon July 27", theme: "What makes leaders persuasive?" },
     { n: "Day 2", title: "Market Research, AI Tools & Opportunity Discovery", date: "Tue July 28", theme: "A good idea means nothing without demand." },
@@ -7276,12 +7293,18 @@ function SummerDetailPage({ setPage, openInquiry }) {
           {/* Eyebrow — Lora, matches Venture Tracks */}
           <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color: "#A48D6E", fontWeight: 600, textTransform: "uppercase", marginBottom: 18 }}>Portfolio &amp; Beyond</p>
 
-          {/* Heading — Adobe Garamond all-caps, matches Venture Tracks */}
-          <h2 style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: isMobile ? "2rem" : "3.8rem", fontWeight: 400, fontStyle: "italic", color: "#A48D6E", letterSpacing: ".0325em", lineHeight: 1.15, marginBottom: 20 }}>The Excalibur Summer Portfolio</h2>
+          {/* Heading — Adobe Garamond, matches The Program */}
+          <h2 style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: isMobile ? "2rem" : "3.8rem", fontWeight: 400, fontStyle: "normal", color: "#100F0C", letterSpacing: ".0325em", lineHeight: 1.15, textTransform: "uppercase", marginBottom: 40 }}>The Excalibur<br />Summer Portfolio</h2>
 
-          {/* Body paragraphs — Lora, #100F0C — wait, bg is #34150F so use E4D5C1 */}
-          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, color: "#E4D5C1", fontWeight: 400, lineHeight: 1.7, marginBottom: 12, maxWidth: 680 }}>Every student leaves with a professional portfolio documenting the full scope of their work — customer research, market validation, venture strategy, MVP development, traction metrics, and the final Shark Tank-inspired presentation before a live panel of executives, investors, community leaders, and entrepreneurs.</p>
-          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, color: "#E4D5C1", fontWeight: 400, lineHeight: 1.7, marginBottom: 48, maxWidth: 680 }}>Tangible work. Real-world experience. Measurable progress. A portfolio built around execution, not attendance — shaping young leaders, founders, and builders who act, lead, and deliver.</p>
+          {/* First paragraph with drop cap E */}
+          <div style={{ marginBottom: 28 }}>
+            <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, lineHeight: 1.7, color: "#100F0C", fontWeight: 400, textAlign: "justify" }}>
+              <span style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: isMobile ? "4.8rem" : "6.4rem", fontWeight: 400, lineHeight: 0.8, float: "left", marginRight: 10, marginTop: 8, color: "#100F0C" }}>E</span>
+              very student leaves with a professional portfolio documenting the full scope of their work — customer research, market validation, venture strategy, MVP development, traction metrics, and the final Shark Tank-inspired presentation before a live panel of executives, investors, community leaders, and entrepreneurs.
+            </p>
+          </div>
+          <div style={{ clear: "both" }} />
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, lineHeight: 1.7, color: "#100F0C", fontWeight: 400, marginBottom: 28, textAlign: "justify" }}>Tangible work. Real-world experience. Measurable progress. A portfolio built around execution, not attendance — shaping young leaders, founders, and builders who act, lead, and deliver.</p>
 
           {/* Portfolio list grid */}
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 0, border: "0.5px solid rgba(228,213,193,.12)" }}>
@@ -7298,8 +7321,8 @@ function SummerDetailPage({ setPage, openInquiry }) {
               <div key={i} style={{ padding: "22px 28px", borderBottom: "0.5px solid rgba(228,213,193,.12)", borderRight: !isMobile && i % 2 === 0 ? "0.5px solid rgba(228,213,193,.12)" : "none", display: "flex", gap: 16, alignItems: "start" }}>
                 <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A48D6E", marginTop: 7, flexShrink: 0 }} />
                 <div>
-                  <p style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: 14, fontWeight: 400, fontStyle: "normal", textTransform: "uppercase", letterSpacing: "0.08em", color: "#E4D5C1", marginBottom: 5 }}>{title}</p>
-                  <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 12, color: "#E4D5C1", fontWeight: 400, lineHeight: 1.65, opacity: 0.75 }}>{desc}</p>
+                  <p style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: 26, fontWeight: 400, fontStyle: "normal", textTransform: "uppercase", letterSpacing: "0.08em", color: "#E4D5C1", marginBottom: 5 }}>{title}</p>
+                  <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 16, color: "#E4D5C1", fontWeight: 400, lineHeight: 1.65, opacity: 0.75 }}>{desc}</p>
                 </div>
               </div>
             ))}
@@ -7308,39 +7331,54 @@ function SummerDetailPage({ setPage, openInquiry }) {
       </div>
 
       {/* PROGRAM COMPLETION SUMMARY */}
-      <div style={{ background: "#100F0C", padding: isMobile ? "52px 24px" : "72px 80px" }}>
+      <div style={{ background: "#E4D5C1", padding: isMobile ? "60px 28px" : "88px 80px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.45em", color: "#FBF7EE", fontWeight: 600, textTransform: "uppercase", marginBottom: 12 }}>Portfolio &amp; Beyond</p>
-          <h2 style={{ fontFamily: serif, fontSize: isMobile ? 26 : 40, fontWeight: 300, fontStyle: "italic", color: "#d8b78c", lineHeight: 1.05, marginBottom: 12 }}>Program Completion Summary</h2>
-          <p style={{ fontFamily: sans, fontSize: 14, color: "#FBF7EE", fontWeight: 300, lineHeight: 1.85, marginBottom: 32, maxWidth: 760 }}>A formal summary of the student's venture work, leadership role, market validation, and final presentation before Excalibur faculty, executives, investors, and community leaders. Professional statement of what the student accomplished and can reference for college applications, résumés, interviews, and future opportunities.</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <div style={{ background:"#d8b78c", border: "0.5px solid rgba(216,183,140,.15)", padding: isMobile ? "24px 20px" : "28px 32px" }}>
-              <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.3em", color: "#010000", fontWeight: 600, textTransform: "uppercase", marginBottom: 12 }}>Da Vinci · Commercial Market Venture</p>
-              <p style={{ fontFamily: sans, fontSize: 13, color: "#010000", fontWeight: 300, lineHeight: 1.85 }}>"Co-founded a venture at Excalibur Academy's Summer Intensive — identified a market opportunity, conducted customer discovery and validation, built an MVP, established first business relationships and a professional network, and generated early market traction including customer acquisition, signups, pre-orders, and first revenue. Presented a live business case to a panel of investors and executives. August 2026."</p>
+
+          {/* Eyebrow */}
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color: "#100F0C", fontWeight: 600, textTransform: "uppercase", marginBottom: 18 }}>Portfolio &amp; Beyond</p>
+
+          {/* Section heading */}
+          <h2 style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: isMobile ? "2rem" : "3.8rem", fontWeight: 400, fontStyle: "normal", color: "#100F0C", letterSpacing: ".0325em", lineHeight: 1.15, textTransform: "uppercase", marginBottom: 40 }}>Program Completion<br />Summary.</h2>
+
+          {/* Body paragraph */}
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, lineHeight: 1.7, color: "#100F0C", fontWeight: 400, marginBottom: 48, textAlign: "justify" }}>A formal summary of the student's venture work, leadership role, market validation, and final presentation before Excalibur faculty, executives, investors, and community leaders. Professional statement of what the student accomplished and can reference for college applications, résumés, interviews, and future opportunities.</p>
+
+          {/* Cards — #34150F fills */}
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 16 }}>
+            <div style={{ background: "#34150F", padding: isMobile ? "32px 24px" : "44px 40px" }}>
+              <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, letterSpacing: "0.4em", color: "#E4D5C1", textTransform: "uppercase", fontWeight: 600, marginBottom: 16 }}>Track A</p>
+              <h3 style={{ fontFamily: serif, fontSize: isMobile ? 28 : 36, fontWeight: 300, fontStyle: "italic", color: "#E4D5C1", lineHeight: 1, marginBottom: 12 }}>Da Vinci</h3>
+              <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, fontWeight: 400, lineHeight: 1.7, color: "#E4D5C1", marginBottom: 0 }}>"Co-founded a venture at Excalibur Academy's Summer Intensive — identified a market opportunity, conducted customer discovery and validation, built an MVP, established first business relationships and a professional network, and generated early market traction including customer acquisition, signups, pre-orders, and first revenue. Presented a live business case to a panel of investors and executives. August 2026."</p>
             </div>
-            <div style={{ background:"#d8b78c", border: "0.5px solid rgba(216,183,140,.2)", padding: isMobile ? "24px 20px" : "28px 32px" }}>
-              <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.3em", color: "#010000", fontWeight: 600, textTransform: "uppercase", marginBottom: 12 }}>Medici · Community Impact Venture</p>
-              <p style={{ fontFamily: sans, fontSize: 13, color: "#010000", fontWeight: 300, lineHeight: 1.85 }}>"Identified a real problem in Orange County, built a venture to address it, conducted community testing and validation, secured first market traction — including pre-orders, signups, pilot commitments, and letters of support from local organizations and community stakeholders — and presented to city officials and a panel of investors and executives at Excalibur Academy's Venture Finale. August 2026."</p>
+            <div style={{ background: "#34150F", padding: isMobile ? "32px 24px" : "44px 40px" }}>
+              <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, letterSpacing: "0.4em", color: "#E4D5C1", textTransform: "uppercase", fontWeight: 600, marginBottom: 16 }}>Track B</p>
+              <h3 style={{ fontFamily: serif, fontSize: isMobile ? 28 : 36, fontWeight: 300, fontStyle: "italic", color: "#E4D5C1", lineHeight: 1, marginBottom: 12 }}>Medici</h3>
+              <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, fontWeight: 400, lineHeight: 1.7, color: "#E4D5C1", marginBottom: 0 }}>"Identified a real problem in Orange County, built a venture to address it, conducted community testing and validation, secured first market traction — including pre-orders, signups, pilot commitments, and letters of support from local organizations and community stakeholders — and presented to city officials and a panel of investors and executives at Excalibur Academy's Venture Finale. August 2026."</p>
             </div>
           </div>
+
         </div>
       </div>
 
       {/* A DAY AT EXCALIBUR */}
-      <div style={{ padding: isMobile ? "52px 24px" : "72px 80px", background: "#E4D5C1", borderTop: "1px solid rgba(216,183,140,.1)" }}>
+      <div style={{ padding: isMobile ? "52px 24px" : "72px 80px", background: "#100F0C" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
-            <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.4em", color: "#010000", fontWeight: 700, textTransform: "uppercase", margin: 0 }}>A Day at Excalibur</p>
-          </div>
-          <h2 style={{ fontFamily: serif, fontSize: isMobile ? 26 : 36, fontWeight: 300, fontStyle: "italic", color: "#010000", lineHeight: 1.1, marginBottom: 8 }}>What a summer session looks like</h2>
-          <p style={{ fontFamily: "'Lato', 'Forum', sans-serif", fontSize: 14, color:"#010000", fontWeight: 300, lineHeight: 1.8, marginBottom: 36, maxWidth: 560 }}>Monday through Friday. 9:30 AM to 4:00 PM. Click any block to see what happens in that session.</p>
+
+          {/* Eyebrow — Lora, matches Venture Tracks */}
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color: "#A48D6E", fontWeight: 600, textTransform: "uppercase", marginBottom: 18 }}>A Day at Excalibur</p>
+
+          {/* Heading — Cormorant Garamond, 400 weight, regular */}
+          <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: isMobile ? "2rem" : "3.8rem", fontWeight: 400, fontStyle: "normal", color: "#A48D6E", letterSpacing: ".0325em", lineHeight: 1.15, textTransform: "uppercase", marginBottom: 20 }}>What a summer<br />session looks like.</h2>
+
+          {/* Paragraph — Lora 16px E4D5C1, justified mobile */}
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 16, color: "#E4D5C1", fontWeight: 400, lineHeight: 1.7, marginBottom: 48, maxWidth: 640, textAlign: isMobile ? "justify" : "left" }}>Monday through Friday. 9:30 AM to 4:00 PM. Click any block to see what happens in each session.</p>
 
           {/* Timetable container */}
           <div style={{ overflow: "hidden" }}>
-            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}>
+            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr" }}>
 
               {/* LEFT: tab list */}
-              <div style={{ background: "#010000", borderRight: isMobile ? "none" : "1px solid #d8b78c" }}>
+              <div style={{ background: "#E4D5C1", borderRight: isMobile ? "none" : "1px solid rgba(16,15,12,.15)" }}>
                 {dailySchedule.map((block, i) => {
                   const selected = activeDay === i;
                   return (
@@ -7349,30 +7387,30 @@ function SummerDetailPage({ setPage, openInquiry }) {
                         onClick={() => setActiveDay(selected ? null : i)}
                         style={{
                           display: "grid", gridTemplateColumns: "72px 1fr", gap: 0,
-                          background: selected ? "#d8b78c" : "#010000",
-                          borderBottom: "1px solid rgba(216,183,140,.18)",
+                          background: selected ? "#34150F" : "#E4D5C1",
+                          borderBottom: "1px solid rgba(16,15,12,.15)",
                           cursor: block.desc ? "pointer" : "default",
                           transition: "background .15s",
                           alignItems: "stretch",
                         }}
                       >
                         {/* Time column */}
-                        <div style={{ padding: "14px 16px 14px 18px", borderRight: "1px solid rgba(216,183,140,.18)", display: "flex", alignItems: "center" }}>
-                          <span style={{ fontFamily: eyebrow_font, fontSize: 9, fontWeight: 700, color: selected ? "#010000" : "#d8b78c", letterSpacing: "0.06em", lineHeight: 1.2, whiteSpace: "nowrap" }}>{block.time}</span>
+                        <div style={{ padding: "14px 16px 14px 18px", borderRight: "1px solid rgba(16,15,12,.15)", display: "flex", alignItems: "center" }}>
+                          <span style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, fontWeight: 600, color: selected ? "#E4D5C1" : "#100F0C", letterSpacing: "0.06em", lineHeight: 1.2, whiteSpace: "nowrap", textTransform: "uppercase" }}>{block.time}</span>
                         </div>
                         {/* Block name column */}
                         <div style={{ padding: "14px 18px 14px 16px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                          <p style={{ fontFamily: serif, fontSize: isMobile ? 14 : 16, fontWeight: 300, fontStyle: "italic", color: selected ? "#010000" : "#FBF7EE", lineHeight: 1.25, margin: 0 }}>{block.block}</p>
-                          <p style={{ fontFamily: eyebrow_font, fontSize: 8, letterSpacing: "0.12em", color: selected ? "rgba(0,0,0,.55)" : "rgba(216,183,140,.55)", fontWeight: 400, marginTop: 3 }}>{block.dur}</p>
+                          <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 18, fontWeight: 700, fontStyle: "italic", color: selected ? "#E4D5C1" : "#100F0C", lineHeight: 1.25, margin: 0 }}>{block.block}</p>
+                          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 9, letterSpacing: "0.12em", color: selected ? "rgba(228,213,193,.55)" : "rgba(16,15,12,.55)", fontWeight: 400, marginTop: 3, textTransform: "uppercase" }}>{block.dur}</p>
                         </div>
                       </div>
                       {/* Mobile expand */}
                       {isMobile && selected && block.desc && (
-                        <div style={{ background:"#010000", padding: "24px 22px", borderBottom: "1px solid rgba(216,183,140,.18)" }}>
-                          <p style={{ fontFamily: eyebrow_font, fontSize: 8, letterSpacing: "0.3em", color: "#FBF7EE", fontWeight: 700, textTransform: "uppercase", marginBottom: 8 }}>{block.time} · {block.dur}</p>
-                          <p style={{ fontFamily: serif, fontSize: 18, fontWeight: 300, color:"#FBF7EE", lineHeight: 1.2, marginBottom: 10 }}>{block.block}</p>
-                          {block.role && <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.12em", color:"#FBF7EE", fontWeight: 600, textTransform: "uppercase", marginBottom: 12 }}>{block.role}</p>}
-                          <p style={{ fontFamily: sans, fontSize: 13, lineHeight: 1.85, color:"#FBF7EE", fontWeight: 300 }}>{block.desc}</p>
+                        <div style={{ background:"#34150F", padding: "24px 22px", borderBottom: "1px solid rgba(16,15,12,.15)" }}>
+                          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 9, letterSpacing: "0.3em", color: "#E4D5C1", fontWeight: 700, textTransform: "uppercase", marginBottom: 8 }}>{block.time} · {block.dur}</p>
+                          <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 18, fontWeight: 700, fontStyle: "italic", color:"#E4D5C1", lineHeight: 1.2, marginBottom: 10 }}>{block.block}</p>
+                          {block.role && <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, letterSpacing: "0.12em", color:"#E4D5C1", fontWeight: 600, textTransform: "uppercase", marginBottom: 12 }}>{block.role}</p>}
+                          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, lineHeight: 1.65, color:"#E4D5C1", fontWeight: 400 }}>{block.desc}</p>
                         </div>
                       )}
                     </React.Fragment>
@@ -7380,24 +7418,31 @@ function SummerDetailPage({ setPage, openInquiry }) {
                 })}
               </div>
 
-              {/* RIGHT: detail panel */}
+              {/* CENTER: detail panel */}
               {!isMobile && (
-                <div style={{ background: "#010000", minHeight: 400, position: "relative" }}>
+                <div style={{ background: "#E4D5C1", minHeight: 400, position: "relative", padding: isMobile ? 0 : "36px 36px" }}>
                   {activeDay !== null && dailySchedule[activeDay] && dailySchedule[activeDay].desc ? (
-                    <div style={{ padding: "36px 36px" }}>
-                      <p style={{ fontFamily: eyebrow_font, fontSize: 8, letterSpacing: "0.35em", color: "#FBF7EE", fontWeight: 700, textTransform: "uppercase", marginBottom: 10 }}>{dailySchedule[activeDay].time} · {dailySchedule[activeDay].dur}</p>
-                      <p style={{ fontFamily: serif, fontSize: 24, fontWeight: 300, fontStyle: "italic", color: "#FBF7EE", lineHeight: 1.15, marginBottom: 10 }}>{dailySchedule[activeDay].block}</p>
+                    <div>
+                      <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 9, letterSpacing: "0.35em", color: "#100F0C", fontWeight: 700, textTransform: "uppercase", marginBottom: 10 }}>{dailySchedule[activeDay].time} · {dailySchedule[activeDay].dur}</p>
+                      <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 24, fontWeight: 700, fontStyle: "italic", color: "#100F0C", lineHeight: 1.15, marginBottom: 10 }}>{dailySchedule[activeDay].block}</p>
                       {dailySchedule[activeDay].role && (
-                        <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color:"#FBF7EE", fontWeight: 600, marginBottom: 18, paddingBottom: 18, borderBottom: "1px solid rgba(216,183,140,.15)" }}>{dailySchedule[activeDay].role}</p>
+                        <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color:"#100F0C", fontWeight: 600, marginBottom: 18, paddingBottom: 18, borderBottom: "1px solid rgba(16,15,12,.15)" }}>{dailySchedule[activeDay].role}</p>
                       )}
-                      <p style={{ fontFamily: "'Lato', 'Forum', sans-serif", fontSize: 13, lineHeight: 1.9, color:"#FBF7EE", fontWeight: 300 }}>{dailySchedule[activeDay].desc}</p>
+                      <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, lineHeight: 1.7, color:"#100F0C", fontWeight: 400 }}>{dailySchedule[activeDay].desc}</p>
                     </div>
                   ) : (
                     <div style={{ padding: "48px 40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: 400, gap: 14 }}>
-                      <span style={{ fontFamily: serif, fontSize: 40, color:"#FBF7EE" }}>✦</span>
-                      <p style={{ fontFamily: serif, fontSize: 15, color:"#FBF7EE", fontStyle: "italic", textAlign: "center", lineHeight: 1.6 }}>Select a time block<br />to see what happens in that session</p>
+                      <span style={{ fontFamily: serif, fontSize: 40, color:"#100F0C" }}>✦</span>
+                      <p style={{ fontFamily: serif, fontSize: 15, color:"#100F0C", fontStyle: "italic", textAlign: "center", lineHeight: 1.6 }}>Select a time block<br />to see what happens in that session</p>
                     </div>
                   )}
+                </div>
+              )}
+
+              {/* RIGHT: image that swaps per schedule row */}
+              {!isMobile && (
+                <div style={{ background: "#1a1a1a", minHeight: 400, overflow: "hidden" }}>
+                  <img src={activeDay !== null ? scheduleImages[activeDay] : scheduleImages[0]} alt="Schedule item photo" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", transition: "opacity 0.4s ease" }} />
                 </div>
               )}
             </div>
@@ -7406,20 +7451,24 @@ function SummerDetailPage({ setPage, openInquiry }) {
       </div>
 
       {/* 10-DAY SCHEDULE */}
-      <div style={{ background: "#100F0C", padding: isMobile ? "52px 24px" : "72px 80px" }}>
+      <div style={{ background: "#E4D5C1", padding: isMobile ? "60px 28px" : "88px 80px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
-            <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.45em", color:"#FBF7EE", fontWeight: 600, textTransform: "uppercase", margin: 0 }}>Summer Program Schedule</p>
-          </div>
-          <h2 style={{ fontFamily: serif, fontSize: isMobile ? 26 : 38, fontWeight: 300, fontStyle: "italic", color:"#d8b78c", lineHeight: 1.05, marginBottom: 8 }}>Excalibur Venture &amp; Leadership Launchpad</h2>
-          <p style={{ fontFamily: sans, fontSize: 14, color:"#FBF7EE", fontWeight: 300, lineHeight: 1.8, marginBottom: 32, maxWidth: 560 }}>Monday July 27 – Friday August 7, 2026 · Venture Finale Saturday August 8, 2026</p>
+
+          {/* Eyebrow */}
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color: "#100F0C", fontWeight: 600, textTransform: "uppercase", marginBottom: 18 }}>Summer Program Schedule</p>
+
+          {/* Heading */}
+          <h2 style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: isMobile ? "2.4rem" : "4.2rem", fontWeight: 400, fontStyle: "normal", color: "#100F0C", letterSpacing: ".0325em", lineHeight: 1.15, textTransform: "uppercase", marginBottom: 20 }}>Excalibur Venture<br />&amp; Leadership Launchpad</h2>
+
+          {/* Subheading */}
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, color: "#100F0C", fontWeight: 400, lineHeight: 1.7, marginBottom: 48, maxWidth: 640 }}>Monday July 27 – Friday August 7, 2026 · Venture Finale Saturday August 8, 2026</p>
 
           {/* Daily format summary bar */}
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4,1fr)", gap: 1, marginBottom: 40, background: "#d8b78c" }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4,1fr)", gap: 1, marginBottom: 40, background: "#A48D6E" }}>
             {[["Public Speaking","90 min · Daily"],["Specialist Workshop","60 min · Daily"],["Venture Workshop","2.5 hrs · Daily"],["Guest Speakers","Every other day"]].map(([l,v]) => (
-              <div key={l} style={{ background: "#010000", padding: "22px 24px" }}>
-                <p style={{ fontFamily: eyebrow_font, fontSize: 8, letterSpacing: "0.3em", color: "#d8b78c", textTransform: "uppercase", fontWeight: 700, marginBottom: 8 }}>{l}</p>
-                <p style={{ fontFamily: serif, fontSize: 16, fontWeight: 300, fontStyle: "italic", color:"#FBF7EE" }}>{v}</p>
+              <div key={l} style={{ background: "#100F0C", padding: "22px 24px" }}>
+                <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, letterSpacing: "0.3em", color: "#A48D6E", textTransform: "uppercase", fontWeight: 600, marginBottom: 8 }}>{l}</p>
+                <p style={{ fontFamily: serif, fontSize: 16, fontWeight: 300, fontStyle: "italic", color:"#E4D5C1" }}>{v}</p>
               </div>
             ))}
           </div>
@@ -7428,29 +7477,29 @@ function SummerDetailPage({ setPage, openInquiry }) {
           {[{week:"I",label:"Foundation, Validation & Market Discovery",dates:"July 27 – July 31",daysSlice:[0,5]},{week:"II",label:"Execution, Pitching & The Venture Finale",dates:"August 3 – August 7",daysSlice:[5,10]}].map(({week,label,dates,daysSlice}) => (
             <div key={week} style={{ marginBottom: 36 }}>
               {/* Week header */}
-              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "56px 1fr", gap: 0, background: "#010000", marginBottom: 1 }}>
-                <div style={{ padding: "20px 22px", borderRight: "1px solid rgba(216,183,140,.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ fontFamily: serif, fontSize: 36, fontWeight: 300, fontStyle: "italic", color: "#d8b78c", lineHeight: 1 }}>{week}</span>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "56px 1fr", gap: 0, background: "#100F0C", marginBottom: 1 }}>
+                <div style={{ padding: "20px 22px", borderRight: "1px solid rgba(164,141,110,.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 42, fontWeight: 400, fontStyle: "italic", color: "#A48D6E", lineHeight: 1 }}>{week}</span>
                 </div>
                 <div style={{ padding: "20px 28px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <p style={{ fontFamily: serif, fontSize: isMobile ? 16 : 20, fontWeight: 300, color:"#FBF7EE", marginBottom: 4, lineHeight: 1.2 }}>{label}</p>
-                  <p style={{ fontFamily: eyebrow_font, fontSize: 8, letterSpacing: "0.3em", color: "#d8b78c", textTransform: "uppercase", fontWeight: 600 }}>{dates}</p>
+                  <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 24, fontWeight: 400, color:"#E4D5C1", marginBottom: 4, lineHeight: 1.2 }}>{label}</p>
+                  <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, letterSpacing: "0.3em", color: "#A48D6E", textTransform: "uppercase", fontWeight: 600 }}>{dates}</p>
                 </div>
               </div>
               {/* Day rows */}
               <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
                 {days.slice(daysSlice[0], daysSlice[1]).map((d, i) => (
-                  <div key={i} style={{ background: "#010000", padding: isMobile ? "16px 18px" : "18px 28px", borderLeft: `3px solid ${d.speaker ? "#d8b78c" : "rgba(216,183,140,.2)"}`, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "110px 1fr auto", gap: isMobile ? 6 : 24, alignItems: "center" }}>
+                  <div key={i} style={{ background: "#100F0C", padding: isMobile ? "16px 18px" : "18px 28px", borderLeft: `3px solid ${d.speaker ? "#A48D6E" : "rgba(164,141,110,.2)"}`, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "110px 1fr auto", gap: isMobile ? 6 : 24, alignItems: "center" }}>
                     <div>
-                      <p style={{ fontFamily: eyebrow_font, fontSize: 8, letterSpacing: "0.25em", color:"#FBF7EE", fontWeight: 700, textTransform: "uppercase", marginBottom: 3 }}>{d.n}</p>
-                      <p style={{ fontFamily: sans, fontSize: 10, color: "#FBF7EE", fontWeight: 300 }}>{d.date}</p>
+                      <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, letterSpacing: "0.25em", color:"#E4D5C1", fontWeight: 700, textTransform: "uppercase", marginBottom: 3 }}>{d.n}</p>
+                      <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 14, fontWeight: 400, color: "#E4D5C1" }}>{d.date}</p>
                     </div>
                     <div>
-                      <p style={{ fontFamily: serif, fontSize: isMobile ? 15 : 18, fontWeight: 400, color:"#FBF7EE", lineHeight: 1.2, marginBottom: 3 }}>{d.title}</p>
-                      <p style={{ fontFamily: sans, fontSize: 11, color: "#FBF7EE", fontStyle: "italic", fontWeight: 300 }}>"{d.theme}"</p>
+                      <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: isMobile ? 18 : 22, fontWeight: 400, color:"#E4D5C1", lineHeight: 1.2, marginBottom: 3 }}>{d.title}</p>
+                      <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 15, fontStyle: "italic", fontWeight: 400, color: "#E4D5C1" }}>"{d.theme}"</p>
                     </div>
                     {d.speaker && !isMobile && (
-                      <span style={{ fontFamily: eyebrow_font, fontSize: 8, letterSpacing: "0.15em", color: "#d8b78c", border: "1px solid rgba(216,183,140,.4)", padding: "4px 10px", textTransform: "uppercase", whiteSpace: "nowrap", background:"#010000" }}>Guest Speaker</span>
+                      <span style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 9, letterSpacing: "0.15em", color: "#E4D5C1", border: "1px solid rgba(164,141,110,.4)", padding: "4px 10px", textTransform: "uppercase", whiteSpace: "nowrap", background:"#100F0C", fontWeight: 600 }}>Guest Speaker</span>
                     )}
                   </div>
                 ))}
@@ -7460,35 +7509,51 @@ function SummerDetailPage({ setPage, openInquiry }) {
         </div>
       </div>
 
+      {/* ── FULL-BLEED PHOTO ── */}
+      <div style={{ width: "100%", height: isMobile ? 240 : 560, overflow: "hidden", background: "#1a1a1a", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <img src="https://i.imgur.com/N4OB8dS.jpeg" alt="Venture Finale" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
+      </div>
+
       {/* VENTURE FINALE */}
-      <div style={{ background: "#E4D5C1", padding: isMobile ? "52px 24px" : "80px 80px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 48 : 72, alignItems: "start" }}>
-          <div>
-            <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.4em", color:"#A48D6E", fontWeight: 600, textTransform: "uppercase", marginBottom: 14 }}>The Culmination · Saturday August 8, 2026</p>
-            <h3 style={{ fontFamily: serif, fontSize: isMobile ? 32 : 52, fontWeight: 300, fontStyle: "italic", color: "#010000", lineHeight: 1.05, marginBottom: 20 }}>Excalibur<br /><span style={{ color:"#010000" }}>Venture Finale</span></h3>
-            <p style={{ fontFamily: "'Lato', 'Forum', sans-serif", fontSize: 14, lineHeight: 1.9, color:"#010000", fontWeight: 300, marginBottom: 16 }}>The Venture Finale takes place at a private South Orange County estate, where families gather alongside investors, executives, entrepreneurs, and community leaders. One by one, each team takes the floor to present what they have built — ten days of research, strategy, execution, and growth, defended before people who understand what real leadership and enterprise require.</p>
-            <p style={{ fontFamily: "'Lato', 'Forum', sans-serif", fontSize: 14, lineHeight: 1.9, color:"#010000", fontWeight: 300, marginBottom: 32 }}>Teams are evaluated on concept strength, market research, customer insight, marketing strategy, business logic, and composure under questioning. Medici track teams are additionally evaluated by invited community officials.</p>
-            <button onClick={() => openInquiry && openInquiry("summer")} style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.18em", padding: "13px 28px", background: "#010000", border: "1px solid rgba(216,183,140,.25)", color: "#d8b78c", textTransform: "uppercase", cursor: "pointer", fontWeight: 600 }}>Apply — Summer Intensive →</button>
+      <div style={{ background: "#E4D5C1", padding: isMobile ? "60px 28px" : "88px 80px" }}>
+        <div style={{ maxWidth: 820, margin: "0 auto" }}>
+
+          {/* Eyebrow */}
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color: "#100F0C", fontWeight: 600, textTransform: "uppercase", marginBottom: 18 }}>The Culmination · Saturday August 8, 2026</p>
+
+          {/* Section heading — Adobe Garamond, matches The Program */}
+          <h2 style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: isMobile ? "2rem" : "3.8rem", fontWeight: 400, fontStyle: "normal", color: "#100F0C", letterSpacing: ".0325em", lineHeight: 1.15, textTransform: "uppercase", marginBottom: 40 }}>Excalibur<br />Venture Finale</h2>
+
+          {/* Body paragraphs with drop cap T */}
+          <div style={{ marginBottom: 28 }}>
+            <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, lineHeight: 1.7, color: "#100F0C", fontWeight: 400, textAlign: "justify" }}>
+              <span style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: isMobile ? "4.8rem" : "6.4rem", fontWeight: 400, lineHeight: 0.8, float: "left", marginRight: 10, marginTop: 8, color: "#100F0C" }}>T</span>
+              he Venture Finale takes place at a private South Orange County estate, where families gather alongside investors, executives, entrepreneurs, and community leaders. One by one, each team takes the floor to present what they have built — ten days of research, strategy, execution, and growth, defended before people who understand what real leadership and enterprise require.
+            </p>
           </div>
-          <div>
-            <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.35em", color:"#A48D6E", fontWeight: 600, textTransform: "uppercase", marginBottom: 20 }}>Seven Awards</p>
-            <div style={{ borderTop: "1px solid rgba(216,183,140,.2)" }}>
-              {[
-                ["Best Venture Concept","Strongest overall venture — idea quality, validation, and execution across the full two weeks."],
-                ["Best Pitch","Most compelling, confident, and well-structured presentation delivered on Finale day."],
-                ["Most Innovative","Most original approach to a problem — commercial or community."],
-                ["Best Leadership","Team that demonstrated the strongest leadership, accountability, and execution discipline."],
-                ["Highest Market Validation","Most documented evidence of real demand — signups, pre-orders, customer conversations, revenue, or pilot commitments."],
-                ["Audience Choice","Voted by families, guests, and community members in attendance at the Finale."],
-                ["★ Community Impact Award","Medici Track — Jointly judged by investors and invited community officials. Double weight on Market Validation scoring."],
-              ].map(([name, desc]) => (
-                <div key={name} style={{ padding: "14px 0", borderBottom: "1px solid rgba(216,183,140,.12)" }}>
-                  <p style={{ fontFamily: eyebrow_font, fontSize: 10, fontWeight: 700, color: "#010000", marginBottom: 4, letterSpacing: "0.04em" }}>{name}</p>
-                  <p style={{ fontFamily: "'Lato', 'Forum', sans-serif", fontSize: 12, color:"#010000", fontWeight: 300, lineHeight: 1.65 }}>{desc}</p>
-                </div>
-              ))}
-            </div>
+          <div style={{ clear: "both" }} />
+
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 19, lineHeight: 1.7, color: "#100F0C", fontWeight: 700, marginBottom: 48, textAlign: "justify" }}>Teams are evaluated on concept strength, market research, customer insight, marketing strategy, business logic, and composure under questioning. Medici track teams are additionally evaluated by invited community officials.</p>
+
+          {/* Awards section */}
+          <div style={{ marginBottom: 0 }}>
+            <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 28, letterSpacing: "0.04em", color: "#100F0C", fontWeight: 700, fontStyle: "italic", textTransform: "uppercase", marginBottom: 28 }}>Seven Awards</p>
+            {[
+              ["Best Venture Concept","Strongest overall venture — idea quality, validation, and execution across the full two weeks."],
+              ["Best Pitch","Most compelling, confident, and well-structured presentation delivered on Finale day."],
+              ["Most Innovative","Most original approach to a problem — commercial or community."],
+              ["Best Leadership","Team that demonstrated the strongest leadership, accountability, and execution discipline."],
+              ["Highest Market Validation","Most documented evidence of real demand — signups, pre-orders, customer conversations, revenue, or pilot commitments."],
+              ["Audience Choice","Voted by families, guests, and community members in attendance at the Finale."],
+              ["★ Community Impact Award","Medici Track — Jointly judged by investors and invited community officials. Double weight on Market Validation scoring."],
+            ].map(([name, desc]) => (
+              <div key={name} style={{ paddingBottom: 24, marginBottom: 24, borderBottom: "1px solid rgba(16,15,12,.12)" }}>
+                <p style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: 16, fontWeight: 700, fontStyle: "normal", textTransform: "uppercase", letterSpacing: "0.08em", color: "#100F0C", marginBottom: 6 }}>{name}</p>
+                <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, color:"#100F0C", fontWeight: 400, lineHeight: 1.65 }}>{desc}</p>
+              </div>
+            ))}
           </div>
+
         </div>
       </div>
 
@@ -7496,10 +7561,20 @@ function SummerDetailPage({ setPage, openInquiry }) {
       <div style={{ background: "#100F0C", padding: isMobile ? "52px 24px" : "80px 80px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
-                        <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.45em", color:"#FBF7EE", fontWeight: 600, textTransform: "uppercase", margin: 0 }}>Team Assembly</p>
+            <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color:"#A48D6E", fontWeight: 600, textTransform: "uppercase", margin: 0 }}>Team Assembly</p>
           </div>
-          <h2 style={{ fontFamily: serif, fontSize: isMobile ? 26 : 40, fontWeight: 300, fontStyle: "italic", color:"#d8b78c", lineHeight: 1.05, marginBottom: 12 }}>Teams curated<br />before the program begins</h2>
-          <p style={{ fontFamily: sans, fontSize: 14, color:"#FBF7EE", fontWeight: 300, lineHeight: 1.8, marginBottom: 40, maxWidth: 640 }}>Teams are curated before the program begins — aligned by track, balanced by skill set and chosen tracks — commercial or community venture. Students arrive on Day 1 already placed with their venture team, allowing the program to move immediately into leadership dynamics, role definition, collaboration, and execution.</p>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: isMobile ? "2rem" : "3.8rem", fontWeight: 400, fontStyle: "normal", color:"#E4D5C1", letterSpacing: ".0325em", lineHeight: 1.15, textTransform: "uppercase", marginBottom: 20 }}>Teams curated<br />before the program begins</h2>
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 16, color:"#E4D5C1", fontWeight: 400, lineHeight: 1.7, marginBottom: 48, maxWidth: 640, textAlign: isMobile ? "justify" : "left" }}>Teams are curated before the program begins — aligned by track, balanced by skill set and chosen tracks — commercial or community venture. Students arrive on Day 1 already placed with their venture team, allowing the program to move immediately into leadership dynamics, role definition, collaboration, and execution.</p>
+
+          {/* Placeholder photos */}
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 16, marginBottom: 48 }}>
+            <div style={{ background: "#1a1a1a", minHeight: 280, overflow: "hidden" }}>
+              <img src="https://i.imgur.com/N4OB8dS.jpeg" alt="Team Assembly photo 1" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
+            </div>
+            <div style={{ background: "#1a1a1a", minHeight: 280, overflow: "hidden" }}>
+              <img src="https://i.imgur.com/pjURLCk.jpeg" alt="Team Assembly photo 2" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
+            </div>
+          </div>
           <div style={{ marginBottom: 32 }}>
             {[
               {n:"1",title:"Applications reviewed",body:"The Excalibur faculty team reviews every application and assembles teams of 4–5 students — balanced across track preference, skill profile, industry interest, and school. Every team has a natural mix of leadership, analytical, creative, communication, and technical strengths."},
@@ -7508,22 +7583,22 @@ function SummerDetailPage({ setPage, openInquiry }) {
             ].map((s) => (
               <div key={s.n} style={{ display: "grid", gridTemplateColumns: "40px 1fr", gap: 20, padding: "24px 0", borderBottom: "0.5px solid rgba(0,0,0,.1)", alignItems: "start" }}>
                 <div style={{ width: 34, height: 34, border: "0.5px solid rgba(216,183,140,.3)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <span style={{ fontFamily: sans, fontSize: 12, fontWeight: 500, color:"#FBF7EE" }}>{s.n}</span>
+                  <span style={{ fontFamily: sans, fontSize: 12, fontWeight: 500, color:"#E4D5C1" }}>{s.n}</span>
                 </div>
                 <div>
-                  <p style={{ fontFamily: sans, fontSize: 14, fontWeight: 500, color:"#FBF7EE", marginBottom: 6 }}>{s.title}</p>
-                  <p style={{ fontFamily: sans, fontSize: 13, color:"#FBF7EE", fontWeight: 300, lineHeight: 1.8 }}>{s.body}</p>
+                  <p style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: 18, fontWeight: 400, color:"#A48D6E", marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.08em" }}>{s.title}</p>
+                  <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, color:"#E4D5C1", fontWeight: 400, lineHeight: 1.7 }}>{s.body}</p>
                 </div>
               </div>
             ))}
           </div>
           <div>
-            <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.35em", color:"#FBF7EE", textTransform: "uppercase", fontWeight: 600, marginBottom: 16 }}>Team Roles</p>
+            <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color:"#A48D6E", fontWeight: 600, textTransform: "uppercase", marginBottom: 18 }}>Team Roles</p>
             <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2,1fr)" : "repeat(5,1fr)", gap: 10 }}>
               {[["CEO","Team lead. Direction and decisions."],["CMO","Marketing, brand, outreach."],["CFO","Financials, pricing, revenue."],["CPO","Product, prototype, delivery."],["CSO","Sales, customers, traction."]].map(([role,desc]) => (
                 <div key={role} style={{ padding: "18px 14px", border: "0.5px solid rgba(0,0,0,.12)", textAlign: "center" }}>
-                  <p style={{ fontFamily: serif, fontSize: 18, fontWeight: 300, color:"#FBF7EE", marginBottom: 6 }}>{role}</p>
-                  <p style={{ fontFamily: sans, fontSize: 11, color:"#FBF7EE", fontWeight: 300, lineHeight: 1.5 }}>{desc}</p>
+                  <p style={{ fontFamily: serif, fontSize: 18, fontWeight: 300, color:"#E4D5C1", marginBottom: 6 }}>{role}</p>
+                  <p style={{ fontFamily: sans, fontSize: 11, color:"#E4D5C1", fontWeight: 300, lineHeight: 1.5 }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -7532,103 +7607,130 @@ function SummerDetailPage({ setPage, openInquiry }) {
       </div>
 
       {/* SUMMER FACULTY */}
-      <div style={{ background: "#E4D5C1", padding: isMobile ? "56px 24px" : "80px 80px" }}>
+      <div style={{ background: "#E4D5C1", padding: isMobile ? "60px 28px" : "88px 80px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12 }}>
-            <div style={{ width: 32, height: "1px", background:"#010000" }} />
-            <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.45em", color:"#A48D6E", fontWeight: 600, textTransform: "uppercase", margin: 0 }}>FACULTY &amp; LEADERSHIP</p>
-          </div>
-          <h2 style={{ fontFamily: serif, fontSize: isMobile ? 26 : 36, fontWeight: 300, fontStyle: "italic", color: "#010000", lineHeight: 1.1, marginBottom: 8 }}>The Mentors In the Room</h2>
-          <p style={{ fontFamily: "'Lato', 'Forum', sans-serif", fontSize: 14, color:"#010000", fontWeight: 300, lineHeight: 1.8, maxWidth: 680, marginBottom: 48 }}>Excalibur faculty come from the arenas where leadership is tested: a CEO who built the world's first autonomous racing series, directed the Formula BMW program, and oversaw a $13B NASDAQ listing, a former Citigroup Managing Director and Georgetown MBA professor with 100+ M&A transactions, and senior practitioners across public speaking, business development, and executive coaching.</p>
+          
+          {/* Eyebrow */}
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color: "#100F0C", fontWeight: 600, textTransform: "uppercase", marginBottom: 18 }}>Faculty &amp; Leadership</p>
+
+          {/* Heading */}
+          <h2 style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: isMobile ? "2.4rem" : "4.2rem", fontWeight: 400, fontStyle: "normal", color: "#100F0C", letterSpacing: ".0325em", lineHeight: 1.15, textTransform: "uppercase", marginBottom: 20 }}>The Mentors<br />In the Room</h2>
+
+          {/* Subheading */}
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, color: "#100F0C", fontWeight: 400, lineHeight: 1.7, marginBottom: 48, maxWidth: 640, textAlign: "justify" }}>Excalibur faculty come from the arenas where leadership is tested: a CEO who built the world's first autonomous racing series, directed the Formula BMW program, and oversaw a $13B NASDAQ listing, a former Citigroup Managing Director and Georgetown MBA professor with 100+ M&A transactions, and senior practitioners across public speaking, business development, and executive coaching.</p>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: isMobile ? 24 : 32, alignItems: "stretch" }}>
             {coaches.filter(c => ["Bill Morris", "Chip Pankow", "Erik Dostal", "Christopher Sanders", "Keree James"].includes(c.name)).map((co, i) => (
-              <CoachCard key={i} c={co} i={i} setPage={setPage} light={false} />
+              <CoachCard key={i} c={co} i={i} setPage={setPage} light={true} />
             ))}
           </div>
         </div>
       </div>
 
       {/* WHAT'S INCLUDED + ADMISSIONS */}
-      <div style={{ background: "#100F0C", padding: isMobile ? "52px 24px" : "72px 80px" }}>
+      <div style={{ background: "#100F0C", padding: isMobile ? "52px 24px" : "80px 80px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 48 : 80 }}>
           <div>
-            <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.35em", color:"#FBF7EE", fontWeight: 600, textTransform: "uppercase", marginBottom: 16 }}>What's Included</p>
+            {/* Eyebrow */}
+            <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color:"#A48D6E", fontWeight: 600, textTransform: "uppercase", marginBottom: 18 }}>What's Included</p>
+            
+            {/* List items */}
             {["Daily public speaking and executive communication training","Venture development — market research, competitor analysis, business planning","Marketing strategy, branding, and customer psychology","AI tools for business research, analysis, and presentation","Sales, persuasion, and pitch training","Distinguished guest speakers from different industry sectors, business and entrepreneurship","Excalibur Venture Finale — live Shark Tank-inspired pitch before real investors, entrepreneurs, and executives","Bound Certificate of Completion and Graduate Portfolio","Catered daily lunches, snacks, smoothies and refreshments","Priority consideration for the Ten-Month Flagship Program","Daily Academy Shuttle for pick up/drop off (for South OC students)"].map((item, i) => (
-              <div key={i} style={{ display: "flex", gap: 12, padding: "9px 0", borderBottom: "1px solid rgba(216,183,140,.25)", alignItems: "flex-start" }}>
-                <span style={{ fontFamily: serif, fontSize: 10, color:"#FBF7EE", flexShrink: 0, paddingTop: 1 }}>—</span>
-                <span style={{ fontFamily: sans, fontSize: 13, color:"#FBF7EE", fontWeight: 300, lineHeight: 1.6 }}>{item}</span>
+              <div key={i} style={{ display: "flex", gap: 12, padding: "12px 0", borderBottom: "0.5px solid rgba(228,213,193,.15)", alignItems: "flex-start" }}>
+                <span style={{ fontFamily: serif, fontSize: 11, color:"#E4D5C1", flexShrink: 0, paddingTop: 2 }}>—</span>
+                <span style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 14, color:"#E4D5C1", fontWeight: 400, lineHeight: 1.6 }}>{item}</span>
               </div>
             ))}
-            <div style={{ marginTop: 28 }}>
-              <button onClick={() => openInquiry && openInquiry("summer")} style={{ fontFamily: sans, padding: "14px 36px", background: "#d8b78c", border: "none", color: "#010000", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", cursor: "pointer" }}>APPLY NOW →</button>
+            
+            {/* Apply button */}
+            <div style={{ marginTop: 32 }}>
+              <button onClick={() => openInquiry && openInquiry("summer")} style={{ fontFamily: sans, padding: "14px 36px", background: "#E4D5C1", border: "none", color: "#010000", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", cursor: "pointer" }}>Apply Now →</button>
             </div>
           </div>
+          
+          {/* Admissions section */}
           <div>
-            <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.45em", color:"#FBF7EE", fontWeight: 600, textTransform: "uppercase", marginBottom: 20 }}>Admissions</p>
-            <h3 style={{ fontFamily: serif, fontSize: isMobile ? 24 : 30, fontWeight: 300, color:"#d8b78c", lineHeight: 1.1, marginBottom: 16 }}>Who This Program Is For</h3>
-            <p style={{ fontFamily: sans, fontSize: 14, color:"#FBF7EE", fontWeight: 300, lineHeight: 1.85, marginBottom: 20 }}>The Summer Intensive is built for ambitious students ages 14–17 ready to think like founders, work in teams, take initiative, and turn ambition into discipline and action. Excalibur looks for curiosity, drive, maturity, and the willingness to learn not only about business, but about oneself.</p>
-            <p style={{ fontFamily: sans, fontSize: 14, color:"#FBF7EE", fontWeight: 300, lineHeight: 1.85, marginBottom: 20 }}>This is not a traditional summer camp or passive enrichment program. It is a focused, immersive environment where students are challenged to think deeply, dream boldly, speak clearly, take initiative, make mistakes, build resilience, and grow through challenge.</p>
-            <p style={{ fontFamily: sans, fontSize: 14, color:"#FBF7EE", fontWeight: 300, lineHeight: 1.85 }}>We look for curiosity, maturity, and a genuine interest in business, leadership, and how the world actually works. The student who leans forward, asks questions, and is ready to step outside their comfort zone.</p>
+            {/* Eyebrow */}
+            <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color:"#A48D6E", fontWeight: 600, textTransform: "uppercase", marginBottom: 20 }}>Admissions</p>
+            
+            {/* Heading */}
+            <h3 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: isMobile ? "2rem" : "3.2rem", fontWeight: 400, fontStyle: "normal", color:"#A48D6E", lineHeight: 1.15, marginBottom: 20, textTransform: "uppercase", letterSpacing: ".0325em" }}>Who This Program Is For</h3>
+            
+            {/* Body paragraphs */}
+            <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 14, color:"#E4D5C1", fontWeight: 400, lineHeight: 1.75, marginBottom: 20 }}>The Summer Intensive is built for ambitious students ages 14–17 ready to think like founders, work in teams, take initiative, and turn ambition into discipline and action. Excalibur looks for curiosity, drive, maturity, and the willingness to learn not only about business, but about oneself.</p>
+            
+            <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 14, color:"#E4D5C1", fontWeight: 400, lineHeight: 1.75, marginBottom: 20 }}>This is not a traditional summer camp or passive enrichment program. It is a focused, immersive environment where students are challenged to think deeply, dream boldly, speak clearly, take initiative, make mistakes, build resilience, and grow through challenge.</p>
+            
+            <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 14, color:"#E4D5C1", fontWeight: 400, lineHeight: 1.75 }}>We look for curiosity, maturity, and a genuine interest in business, leadership, and how the world actually works. The student who leans forward, asks questions, and is ready to step outside their comfort zone.</p>
           </div>
         </div>
       </div>
 
       {/* HOW TO APPLY */}
-      <div style={{ background: "#E4D5C1", padding: isMobile ? "52px 24px" : "72px 80px", borderTop: "1px solid rgba(0,0,0,.06)" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.45em", color:"#A48D6E", fontWeight: 600, textTransform: "uppercase", marginBottom: 20 }}>Admissions Process</p>
-          <h2 style={{ fontFamily: serif, fontSize: isMobile ? 26 : 38, fontWeight: 300, color:"#010000", lineHeight: 1.05, marginBottom: 52 }}>How to Apply</h2>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", position: "relative", marginBottom: 0 }}>
-            {!isMobile && <div style={{ position: "absolute", top: 22, left: 44, right: 44, height: "1px", background: "linear-gradient(90deg, rgba(0,0,0,.04), rgba(0,0,0,.15), rgba(0,0,0,.04))", zIndex: 0 }} />}
-            {[
-              {n:"01",title:"Submit Application",desc:"Begin by submitting a brief application for admissions review using the form below. Excalibur is selective, and each applicant is considered individually."},
-              {n:"02",title:"Admissions Consultation",desc:"A member of the admissions team will contact the family within 24 hours to answer questions, discuss the student's goals, and walk through program options and availability."},
-              {n:"03",title:"Enrollment Confirmation",desc:"Upon acceptance, enrollment is confirmed by deposit. Each cohort is limited to 20 students to preserve the quality of instruction, mentorship, and direct feedback."},
-            ].map((step) => (
-              <div key={step.n} style={{ padding: isMobile ? "28px 0" : "0 28px 0 0", borderTop: isMobile ? "1px solid rgba(216,183,140,.1)" : "none", borderLeft: !isMobile && step.n !== "01" ? "1px solid rgba(216,183,140,.1)" : "none", paddingLeft: !isMobile && step.n !== "01" ? 28 : 0, position: "relative", zIndex: 1 }}>
-                <div style={{ width: 44, height: 44, border: "1px solid rgba(0,0,0,.2)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 24, background: "#010000" }}>
-                  <span style={{ fontFamily: serif, fontSize: 18, fontWeight: 300, color:"#d8b78c" }}>{step.n}</span>
+      <div style={{ background: "#34150F", padding: isMobile ? "52px 24px" : "72px 80px", borderTop: "1px solid rgba(228,213,193,.1)" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 48, alignItems: "stretch" }}>
+          
+          {/* Left: Steps */}
+          <div>
+            <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color:"#A48D6E", fontWeight: 600, textTransform: "uppercase", marginBottom: 18 }}>Admissions Process</p>
+            <h2 style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: isMobile ? "2rem" : "3.8rem", fontWeight: 400, fontStyle: "normal", color:"#E4D5C1", letterSpacing: ".0325em", lineHeight: 1.15, textTransform: "uppercase", marginBottom: 40 }}>How to Apply</h2>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {[
+                {n:"01",title:"Submit Application",desc:"Begin by submitting a brief application for admissions review using the form below. Excalibur is selective, and each applicant is considered individually."},
+                {n:"02",title:"Admissions Consultation",desc:"A member of the admissions team will contact the family within 24 hours to answer questions, discuss the student's goals, and walk through program options and availability."},
+                {n:"03",title:"Enrollment Confirmation",desc:"Upon acceptance, enrollment is confirmed by deposit. Each cohort is limited to 20 students to preserve the quality of instruction, mentorship, and direct feedback."},
+              ].map((step) => (
+                <div key={step.n} style={{ padding: "24px 0", borderBottom: "1px solid rgba(228,213,193,.15)", position: "relative" }}>
+                  <div style={{ width: 44, height: 44, border: "1px solid rgba(228,213,193,.25)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16, background: "#34150F" }}>
+                    <span style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: 18, fontWeight: 400, color:"#A48D6E" }}>{step.n}</span>
+                  </div>
+                  <p style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: 20, fontWeight: 400, color:"#A48D6E", lineHeight: 1.25, marginBottom: 12, textTransform: "uppercase", letterSpacing: "0.08em" }}>{step.title}</p>
+                  <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, color:"#E4D5C1", fontWeight: 400, lineHeight: 1.7, textAlign: "justify" }}>{step.desc}</p>
                 </div>
-                <p style={{ fontFamily: serif, fontSize: isMobile ? 16 : 17, fontWeight: 300, color:"#010000", lineHeight: 1.25, marginBottom: 12 }}>{step.title}</p>
-                <p style={{ fontFamily: sans, fontSize: 12, color:"#E4D5C1", fontWeight: 300, lineHeight: 1.8 }}>{step.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+          
+          {/* Right: Image */}
+          {!isMobile && (
+            <div style={{ background: "#1a1a1a", minHeight: "100%", overflow: "hidden" }}>
+              <img src="https://i.imgur.com/N4OB8dS.jpeg" alt="How to Apply" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
+            </div>
+          )}
         </div>
       </div>
 
       {/* ENROLLMENT */}
       <div style={{ background: "#100F0C", padding: isMobile ? "52px 24px" : "72px 80px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.4em", color:"#FBF7EE", fontWeight: 600, textTransform: "uppercase", marginBottom: 16 }}>Enrollment · Summer 2026</p>
-          <h2 style={{ fontFamily: serif, fontSize: isMobile ? 28 : 40, fontWeight: 300, fontStyle: "italic", color: "#d8b78c", lineHeight: 1.05, marginBottom: 8 }}>Apply for Summer 2026</h2>
-          <p style={{ fontFamily: "'Lato', 'Forum', sans-serif", fontSize: 14, color:"#FBF7EE", fontWeight: 300, lineHeight: 1.8, marginBottom: 40, maxWidth: 580 }}>Select your wave and complete your program application. Our Enrollment Coordinator will be in touch within 24 hours.</p>
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.45em", color:"#A48D6E", fontWeight: 600, textTransform: "uppercase", marginBottom: 18 }}>Enrollment · Summer 2026</p>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: isMobile ? "2rem" : "3.8rem", fontWeight: 400, fontStyle: "normal", color: "#A48D6E", letterSpacing: ".0325em", lineHeight: 1.15, textTransform: "uppercase", marginBottom: 20 }}>Apply for Summer 2026</h2>
+          <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 16, color:"#E4D5C1", fontWeight: 400, lineHeight: 1.7, marginBottom: 48, maxWidth: 640, textAlign: isMobile ? "justify" : "left" }}>Select your wave and complete your program application. Our Enrollment Coordinator will be in touch within 24 hours.</p>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 2, marginBottom: 2 }}>
-            {[{label:"WAVE — JULY 27",wave:"Wave",dates:"July 27 – August 8, 2026",days:"Monday – Friday · 9:30 AM – 4:00 PM",tag:"● Enrollment Open",tagColor:"#d8b78c"}].map((w, i) => (
-              <div key={i} style={{ background: "#010000", padding: isMobile ? "36px 24px" : "48px 44px", borderTop: `2px solid #d8b78c` }}>
-                <p style={{ fontFamily: eyebrow_font, fontSize: 8, letterSpacing: "0.4em", color:"#FBF7EE", fontWeight: 600, textTransform: "uppercase", marginBottom: 12 }}>{w.label}</p>
-                <h3 style={{ fontFamily: serif, fontSize: 28, fontWeight: 300, fontStyle: "italic", color:"#d8b78c", marginBottom: 6, lineHeight: 1 }}>{w.wave}</h3>
-                <p style={{ fontFamily: serif, fontSize: 16, color:"#FBF7EE", fontStyle: "italic", marginBottom: 20 }}>{w.dates}</p>
-                <div style={{ height: "1px", background: "rgba(216,183,140,.15)", marginBottom: 20 }} />
+            {[{label:"WAVE — JULY 27",wave:"SUMMER WAVE",dates:"July 27 – August 8, 2026",days:"Monday – Friday · 9:30 AM – 4:00 PM",tag:"● Enrollment Open",tagColor:"#A48D6E"}].map((w, i) => (
+              <div key={i} style={{ background: "#E4D5C1", padding: isMobile ? "36px 24px" : "48px 44px", borderTop: `2px solid #A48D6E` }}>
+                <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, letterSpacing: "0.3em", color:"#100F0C", fontWeight: 600, textTransform: "uppercase", marginBottom: 12 }}>{w.label}</p>
+                <h3 style={{ fontFamily: "'adobe-garamond-pro', Georgia, serif", fontSize: 28, fontWeight: 400, fontStyle: "normal", color:"#100F0C", marginBottom: 6, lineHeight: 1, textTransform: "uppercase", letterSpacing: "0.08em" }}>{w.wave}</h3>
+                <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 16, color:"#100F0C", fontStyle: "italic", marginBottom: 20 }}>{w.dates}</p>
+                <div style={{ height: "1px", background: "rgba(16,15,12,.15)", marginBottom: 20 }} />
                 {[["Schedule","Mon–Fri · 9:30 AM–4:00 PM · Venture Finale Saturday Aug 8"],["Duration","Two Weeks · 10 Full Days"],["Class Size","Limited to 20 students"],["Tuition","$410 / full day · $4,500 per wave"],["Includes","Catered lunches · Guest speakers · Venture workshops · Shark Tank Finale"]].map(([k,v]) => (
-                  <div key={k} style={{ display: "flex", gap: 16, padding: "9px 0", borderBottom: "1px solid rgba(216,183,140,.1)", alignItems: "flex-start" }}>
-                    <span style={{ fontFamily: eyebrow_font, fontSize: 8, letterSpacing: "0.2em", color: "#d8b78c", textTransform: "uppercase", minWidth: 72, flexShrink: 0, paddingTop: 1 }}>{k}</span>
-                    <span style={{ fontFamily: "'Lato', 'Forum', sans-serif", fontSize: 12, color:"#FBF7EE", fontWeight: 300, lineHeight: 1.6 }}>{v}</span>
+                  <div key={k} style={{ display: "grid", gridTemplateColumns: "100px 1fr", gap: 16, padding: "9px 0", borderBottom: "1px solid rgba(16,15,12,.1)", alignItems: "flex-start" }}>
+                    <span style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, letterSpacing: "0.08em", color: "#100F0C", textTransform: "uppercase", fontWeight: 600 }}>{k}</span>
+                    <span style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 15, color:"#100F0C", fontWeight: 400, lineHeight: 1.6 }}>{v}</span>
                   </div>
                 ))}
-                <p style={{ fontFamily: eyebrow_font, fontSize: 9, color: w.tagColor, letterSpacing: "0.14em", fontWeight: 600, marginTop: 20, marginBottom: 20 }}>{w.tag}</p>
-                <button onClick={() => openInquiry && openInquiry("summer")} style={{ fontFamily: eyebrow_font, padding: "13px 0", background: "#d8b78c", border: "none", color: "#010000", fontSize: 9, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", cursor: "pointer", width: "100%" }}>COMPLETE APPLICATION →</button>
+                <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, color: "#100F0C", letterSpacing: "0.15em", fontWeight: 600, marginTop: 20, marginBottom: 20, textTransform: "uppercase" }}>● Enrollment Open</p>
+                <button onClick={() => openInquiry && openInquiry("summer")} style={{ fontFamily: "'Lora', Georgia, serif", padding: "13px 0", background: "#100F0C", border: "none", color: "#E4D5C1", fontSize: 11, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", cursor: "pointer", width: "100%" }}>COMPLETE APPLICATION →</button>
               </div>
             ))}
-            <div style={{ background: "#010000", padding: isMobile ? "36px 24px" : "48px 44px", borderTop: "2px solid rgba(216,183,140,.2)", border: "1px solid rgba(216,183,140,.12)", display: "flex", flexDirection: "column", justifyContent: "center", gap: 20 }}>
-              <p style={{ fontFamily: serif, fontSize: 52, fontWeight: 300, fontStyle: "italic", color: "#d8b78c", lineHeight: 1 }}>$4,500</p>
-              <p style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.25em", color:"#FBF7EE", textTransform: "uppercase" }}>One Wave · Limited to 20 Students</p>
-              <div style={{ height: "1px", background:"#d8b78c" }} />
+            <div style={{ background: "#34150F", padding: isMobile ? "36px 24px" : "48px 44px", borderTop: "2px solid rgba(228,213,193,.2)", border: "1px solid rgba(228,213,193,.12)", display: "flex", flexDirection: "column", justifyContent: "center", gap: 20 }}>
+              <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 52, fontWeight: 300, fontStyle: "italic", color: "#A48D6E", lineHeight: 1 }}>$4,500</p>
+              <p style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, letterSpacing: "0.25em", color:"#E4D5C1", textTransform: "uppercase", fontWeight: 600 }}>One Wave · Limited to 20 Students</p>
+              <div style={{ height: "1px", background:"#A48D6E" }} />
               <div>
                 {[["Program Dates","July 27 – August 7, 2026"],["Venture Finale","Saturday August 8, 2026"],["Tuition","$4,500 per wave"]].map(([k,v]) => (
-                  <div key={k} style={{ display: "flex", gap: 16, padding: "10px 0", borderBottom: "1px solid rgba(216,183,140,.1)" }}>
-                    <span style={{ fontFamily: eyebrow_font, fontSize: 9, letterSpacing: "0.15em", color: "#d8b78c", minWidth: 100, flexShrink: 0 }}>{k}</span>
-                    <span style={{ fontFamily: "'Lato', 'Forum', sans-serif", fontSize: 12, color:"#FBF7EE", fontWeight: 300 }}>{v}</span>
+                  <div key={k} style={{ display: "grid", gridTemplateColumns: "120px 1fr", gap: 16, padding: "10px 0", borderBottom: "1px solid rgba(228,213,193,.1)" }}>
+                    <span style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 11, letterSpacing: "0.15em", color: "#A48D6E", fontWeight: 600, textTransform: "uppercase" }}>{k}</span>
+                    <span style={{ fontFamily: "'Lora', Georgia, serif", fontSize: 14, color:"#E4D5C1", fontWeight: 400 }}>{v}</span>
                   </div>
                 ))}
               </div>
